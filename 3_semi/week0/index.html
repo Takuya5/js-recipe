@@ -1,30 +1,62 @@
 \<!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <div id="display">ここに何かが表示される</div>
     <button id="button">ボタンをクリック</button>
     <div id="second-display">二個目</div>
     <button id="second-button">二個目のボタンをクリック</button>
-</body>
+  </body>
 
-<script>
+  <script>
     const DISPLAY = document.getElementById("display")
     const BUTTON = document.getElementById("button")
 
     const SECONDDISPLAY = document.getElementById("second-display")
     const SECONDBUTTON = document.getElementById("second-button")
 
-    SCONDBUTTON.onclick = function() {
-        SECONDDISPLAY.textContent = "クリックされた！！"
-    }
     BUTTON.onclick = function() {
-        DISPLAY.textContent = "クリックされた！！"
+      DISPLAY.textContent = "クリックされた！！"
     }
-</script>
+    SECONDBUTTON.onclick = function() {
+      SECONDDISPLAY.textContent = "クリックされた！！"
+    }
+
+    const display = document.getElementById("display")
+    const button = document.getElementById("button")
+    let count = 0
+
+    button.onclick = function() {
+      count += 1
+      display.textContent = count
+      display.style.color = "red"
+    }
+    window.onload = function(e) {
+      console.dir(e)
+    }
+
+    const sayHelloTo = function(name) {
+      alert("Hello, " + name + "!")
+    }
+
+    sayHelloTo("guys")
+
+    // idをもとに要素を ひとつだけ 取得する。
+    const card1 = document.getElementById("primary-card")
+    console.log(card1)
+
+    // CSSのセレクタに合致する要素を ひとつだけ 取得する。
+    const card2 = document.querySelector(".card")
+    console.log(card2)
+
+    // CSSのセレクタに合致する要素を すべて 取得する。
+    const cards = document.querySelectorAll(".card")
+    console.log(cards)
+  </script>
 </html>
