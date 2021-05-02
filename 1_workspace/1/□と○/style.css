@@ -1,3 +1,6 @@
+.transition {
+  transition: all 1s;
+}
 .square {
   width: 100px;
   height: 100px;
@@ -6,17 +9,4 @@
 
 .rounded {
   border-radius: 50px;
-}
-
-.triangle {
-  border-top: 50px solid white;
-  border-right: 50px solid white;
-  border-bottom: 50px solid black;
-  border-left: 50px solid white;
-  width: 0;
-  height: 0;
-}
-
-.transition {
-  transition: all 1s;
 }
