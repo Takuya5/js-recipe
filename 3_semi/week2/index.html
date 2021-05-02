@@ -7,17 +7,15 @@
     <title>Document</title>
   </head>
   <body>
-    <input id="memo" value="" />
+    <input id="memo" value="書いた内容" />
     <button id="addbutton">保存</button>
     <div id="display"></div>
     <script>
       const input = document.getElementById("memo")
       const addButton = document.getElementById("addbutton")
       const display = document.getElementById("display")
-      let memos = ["サッカー", "バスケ", "野球"]
-      if (localStorage.memos) {
-        memos = JSON.parse(localStorage.memos)
-      }
+      const memos = ["サッカー", "バスケ", "野球"]
+
       const memo2 = function() {
         display.innerHTML = ""
         for (let i = 0; i < memos.length; i++) {
@@ -33,9 +31,8 @@
         // ボタンを押したら、配列に追加する
         memos.push(input.value)
         // 配列をブラウザに書き出す
-        localStorage.memos = JSON.stringify(memos)
         memo2()
-      }
+      }      
     </script>
   </body>
 </html>
